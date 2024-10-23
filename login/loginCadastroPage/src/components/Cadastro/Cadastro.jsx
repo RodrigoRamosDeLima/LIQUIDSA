@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import './Cadastro.css';
 import '../LoginCadastro.css';
-import LoginCadastro from '../LoginCadastro'
+
 
 function Cadastro() {
   const [form, setForm] = useState({
@@ -19,9 +19,6 @@ function Cadastro() {
   });
   const [check, setCheck] = useState(false);
 
-  function handleSubmit(event) {
-    event.preventDefault();
-  }
 
   function handleChange({ target }) {
     const { id, value } = target;
@@ -31,7 +28,8 @@ function Cadastro() {
   return (
     <div className="cadastro-form">
       <h2>CADASTRO</h2>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={(event) => event.preventDefault()}>
+
         <Row className="mb-3">
           <Form.Group as={Col} controlId="formGridEmail">
             <FloatingLabel
@@ -86,7 +84,7 @@ function Cadastro() {
           <Form.Group as={Col} controlId="formGridEmail">
             <FloatingLabel
               controlId="floatingInput"
-              label="@Username"
+              label="@Tagname"
               className="mb-3"
             >
               <Form.Control

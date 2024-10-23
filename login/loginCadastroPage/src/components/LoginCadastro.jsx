@@ -3,6 +3,7 @@ import TabsLanding from './TabsLanding/TabsLanding';
 import './LoginCadastro.css';
 import Cadastro from './Cadastro/Cadastro';
 import Login from './Login/Login';
+import Logo from '../../img/liquidTransp.png'
 
 const LoginCadastro = () => {
   const [isLogin, setIsLogin] = useState(false);
@@ -14,6 +15,7 @@ const LoginCadastro = () => {
 
   return (
     <div className="container">
+      <img src={Logo} alt="Logo LiquID" className='logo'/>
       <TabsLanding toggleView={toggleView} />
       <div className="login-cadastro-box">
         <div className={`form-section ${isLogin ? 'login-active' : 'cadastro-active'}`}>
