@@ -1,0 +1,20 @@
+.app {
+  display: flex;
+  height: 100%;  /* Ocupa toda a altura da tela */
+  width: 100%;
+  
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 10px;
+  background-color: #1c1c1c;
+  display: flex;
+  flex-direction: column;
+  
+  
+  
+  
+  
+}
+
