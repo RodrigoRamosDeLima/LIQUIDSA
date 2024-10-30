@@ -14,4 +14,21 @@
     margin-top: -16px;
 }
 
+.login-form input {
+    width: 320px;
+    
+    
+}
+.loginInputs {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.login-form h2 {
+    justify-content: center;
+    display: flex;
+}
+
+
+
 

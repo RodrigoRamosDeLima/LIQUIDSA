@@ -22,25 +22,27 @@ function Login() {
 
   return (
     <div className="login-form">
-        <h2>LOGIN</h2>
+        <h2>Login</h2>
         <form onSubmit={(event) => event.preventDefault()}>
+          <div className='loginInputs'>
+            
         <Row className="mb-3">
           <Form.Group as={Col} controlId="formGridEmail">
             <FloatingLabel
               controlId="floatingInput"
               label="@Tagname"
               className="mb-3"
-            >
+              >
               <Form.Control
                 type="text"
                 placeholder=""
                 id="nome"
                 value={form.nome}
                 onChange={handleChange}
-              />
+                />
             </FloatingLabel>
-          </Form.Group>
-
+          </Form.Group> </Row>
+          <Row className="mb-3">
           <Form.Group as={Col} controlId="formGridPassword">
             <FloatingLabel controlId="floatingPassword" label="Senha">
               <Form.Control
@@ -49,10 +51,11 @@ function Login() {
                 id="senha"
                 value={form.senha}
                 onChange={handleChange}
-              />
+                />
             </FloatingLabel>
           </Form.Group>
         </Row>
+                </div>
         <Button className="form-button" variant="primary" type="submit">
           Login
         </Button>
