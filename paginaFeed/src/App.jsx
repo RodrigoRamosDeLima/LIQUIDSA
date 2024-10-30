@@ -5,7 +5,6 @@ import Feed from './components/Feed/Feed';
 import Notifications from './components/SideBar/Notifications/Notifications';
 import Explore from './components/SideBar/Explore/Explore';
 import EditProfile from './components/SideBar/EditProfile/EditProfile';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';  // Estilos gerais
 import BarBot from './components/SideBar/BarBot/BarBot';
 
@@ -15,15 +14,15 @@ function App() {
 
   const renderPage = () => {
     switch (activePage) {
-      case 'feed':
+      case 'Feed':
         return <Feed />;
-      case 'notifications':
+      case 'Notificações':
         return <Notifications />;
-      case 'explore':
+      case 'Explorar':
         return <Explore />;
-      case 'editProfile':
+      case 'Perfil':
         return <EditProfile />;
-        case 'BarBot':
+        case 'Meu Bar':
         return <BarBot />;
       default:
         return <Feed />;
