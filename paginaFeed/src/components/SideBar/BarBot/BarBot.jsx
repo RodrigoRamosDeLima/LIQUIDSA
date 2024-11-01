@@ -1,6 +1,7 @@
 import './BarBot.css';
 import axios from 'axios';
 import { useState } from 'react';
+import Sidebar from '../SideBar';
 
 function BarBot() {
   const [answer, setAnswer] = useState('');
@@ -83,26 +84,31 @@ function BarBot() {
   };
 
   return (
-    <div className="BarBot">
-      <textarea
-        className="answer-box"
-        id="answer-box"
-        placeholder="Eu sou o seu BarBot, pergunte-me como fazer um drink com o que você possui na sua casa."
-        value={answer}
-        readOnly
-      />
-      <div className="textarea-container">
-        <textarea
-          className="text-box"
-          id="text-box"
-          placeholder="Quais Bebidas você possui em casa?"
-          value={userInput}
-          onChange={(e) => setUserInput(e.target.value)} // Atualiza o estado da entrada do usuário
-          onKeyDown={(e) => handleSubmit(e)}
-        />
-        <button className="send-button">↑</button>
+    <>
+      <div>
+        <Sidebar />
       </div>
-    </div>
+      <div className="BarBot">
+        <textarea
+          className="answer-box"
+          id="answer-box"
+          placeholder="Eu sou o seu BarBot, pergunte-me como fazer um drink com o que você possui na sua casa."
+          value={answer}
+          readOnly
+        />
+        <div className="textarea-container">
+          <textarea
+            className="text-box"
+            id="text-box"
+            placeholder="Quais Bebidas você possui em casa?"
+            value={userInput}
+            onChange={(e) => setUserInput(e.target.value)} // Atualiza o estado da entrada do usuário
+            onKeyDown={(e) => handleSubmit(e)}
+          />
+          <button className="send-button">↑</button>
+        </div>
+      </div>
+    </>
   );
 }
 

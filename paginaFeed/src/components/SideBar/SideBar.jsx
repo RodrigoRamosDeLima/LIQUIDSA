@@ -1,19 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import Search from './Search/Search';
-import NewPost from './NewPost/NewPost'; // Importa o componente de criação de posts
+import NewPost from './NewPost/NewPost';
 import './Sidebar.css';
 
 function Sidebar({ setActivePage }) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isNewPostOpen, setIsNewPostOpen] = useState(false);
-  const [activeButton, setActiveButton] = useState('Feed');
   const searchRef = useRef(null);
   const modalRef = useRef(null);
-
-  const handleButtonClick = (page) => {
-    setActiveButton(page);
-    setActivePage(page);
-  };
 
   const handleSearchClick = () => {
     setIsSearchOpen(!isSearchOpen);
@@ -36,44 +31,52 @@ function Sidebar({ setActivePage }) {
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [searchRef, modalRef]);
 
   return (
     <div className="sidebar">
       <div className="logo">
-        <img src='./png/liquidTransp.png' alt="logo" className="profile-pic" />
+        <img src="./png/liquidTransp.png" alt="logo" className="profile-pic" />
       </div>
-      <nav>
+      <nav className="navMenu">
         <div className="menu">
-          {['Feed', 'Meu Bar', 'Explorar', 'Notificações', 'Perfil'].map((item) => (
-            <div
-              key={item}
-              className={`menu-item ${activeButton === item ? 'active' : ''}`}
-              onClick={() => handleButtonClick(item)}
-            >
-              {item}
-            </div>
-          ))}
-          <div
-            className={`menu-item ${activeButton === 'Pesquisa' ? 'active' : ''}`}
-            onClick={handleSearchClick}
-          >
-            Pesquisa
-          </div>
-          <div
-            className={`menu-item ${activeButton === 'Nova Postagem' ? 'active' : ''}`}
-            onClick={handleNewPostClick}
-          >
+          <NavLink className="menu-item" activeClassName="active" to="/">
+            Feed
+          </NavLink>
+          <NavLink className="menu-item" activeClassName="active" to="/profile">
+            Perfil
+          </NavLink>
+          <div className="menu-item" onClick={handleNewPostClick}>
             Nova Postagem
+          </div>
+          <NavLink className="menu-item" activeClassName="active" to="/barbot">
+            Bar Bot
+          </NavLink>
+          <NavLink className="menu-item" activeClassName="active" to="/explore">
+            Explorar
+          </NavLink>
+          <NavLink
+            className="menu-item"
+            activeClassName="active"
+            to="/notifications"
+          >
+            Notificações
+          </NavLink>
+          <div className="menu-item" onClick={handleSearchClick}>
+            Pesquisa
           </div>
         </div>
       </nav>
 
-      {isSearchOpen && <div ref={searchRef}><Search /></div>}
+      {isSearchOpen && (
+        <div ref={searchRef}>
+          <Search />
+        </div>
+      )}
 
       {isNewPostOpen && (
         <div className="modal-background">

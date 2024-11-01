@@ -1,11 +1,17 @@
 .comment-section {
+  display: flex;
+  flex-direction: column;
   margin-top: 20px;
   padding: 10px;
-  border-top: 1px solid #3a3a3a;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #3a3a3a;
+  padding-left: 7%;
+  padding-right: 7%;
 }
 
 .comment-section h4 {
   margin-bottom: 10px;
+  padding-left: 0%;
 }
 
 .comment-section ul {

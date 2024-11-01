@@ -1,6 +1,7 @@
 import React from 'react';
 import Post from '../PostContent/Post';
 import './Feed.css';
+import Sidebar from '../SideBar/SideBar';
 
 function Feed() {
   const posts = [
@@ -106,9 +107,14 @@ function Feed() {
 
   return (
     <div className="feed">
-      {posts.map((post) => (
-        <Post key={post.id} post={post} />
-      ))}
+      <div>
+        <Sidebar />
+      </div>
+      <div id="feedContent">
+        {posts.map((post) => (
+          <Post key={post.id} post={post} />
+        ))}
+      </div>
     </div>
   );
 }

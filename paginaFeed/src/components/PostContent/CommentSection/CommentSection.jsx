@@ -21,13 +21,15 @@ function CommentSection({ comments }) {
           <li key={index}>{comment}</li>
         ))}
       </ul>
-      <input
-        type="text"
-        value={newComment}
-        onChange={(e) => setNewComment(e.target.value)}
-        placeholder="Adicione um comentário"
-      />
-      <button onClick={handleAddComment}>Comentar</button>
+      <div className="commentContainer">
+        <input
+          type="text"
+          value={newComment}
+          onChange={(e) => setNewComment(e.target.value)}
+          placeholder="Adicione um comentário"
+        />
+        <button onClick={handleAddComment}>Comentar</button>
+      </div>
     </div>
   );
 }

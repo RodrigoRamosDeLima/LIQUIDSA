@@ -1,22 +1,16 @@
 /* Estilo do Sidebar */
 .sidebar {
-  width: 300px;
+  width: 20%;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
   height: 100vh;
   background-color: #222;
   position: fixed;
   left: 1px;
   top: 1px;
   border-right: 2px solid #a83eff;
-}
-
-.profile {
-  text-align: center;
-  margin-bottom: 20px;
 }
 
 .logo {
@@ -28,7 +22,7 @@
 .profile-pic {
   width: 80%;
   margin-top: 50px;
-  margin-bottom: 150px;
+  margin-bottom: 50px;
 }
 
 nav ul {
@@ -36,10 +30,14 @@ nav ul {
   padding: 0;
 }
 
+.navMenu {
+  width: 100%;
+}
+
 .menu {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 100%;
   background-color: #222;
   color: white;
 }
@@ -54,6 +52,8 @@ nav ul {
   transition: color 0.3s ease, background-color 0.3s ease;
   position: relative;
   overflow: hidden;
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
 
 .menu-item:hover {
@@ -108,7 +108,7 @@ nav ul {
 
 .menu-item.active {
   font-weight: bold; 
-  border-bottom: 1px solid #a83eff; 
+  border-bottom: 2px solid #a83eff; 
 }
 
 .menu-item:first-child {
