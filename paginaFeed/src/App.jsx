@@ -5,9 +5,8 @@ import Feed from './components/Feed/Feed';
 import Notifications from './components/SideBar/Notifications/Notifications';
 import Explore from './components/SideBar/Explore/Explore';
 import EditProfile from './components/SideBar/EditProfile/EditProfile';
-import './App.css';  // Estilos gerais
+import './App.css'; // Estilos gerais
 import BarBot from './components/SideBar/BarBot/BarBot';
-
 
 function App() {
   const [activePage, setActivePage] = useState('feed');
@@ -22,7 +21,7 @@ function App() {
         return <Explore />;
       case 'Perfil':
         return <EditProfile />;
-        case 'Meu Bar':
+      case 'Meu Bar':
         return <BarBot />;
       default:
         return <Feed />;
@@ -32,10 +31,7 @@ function App() {
   return (
     <div className="app">
       <Sidebar setActivePage={setActivePage} />
-      <div className="main-content">
-       
-        {renderPage()}
-      </div>
+      <div className="main-content">{renderPage()}</div>
     </div>
   );
 }

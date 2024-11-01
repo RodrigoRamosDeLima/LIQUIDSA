@@ -1,19 +1,42 @@
-import "./BarBot.css";
-import axios from "axios";
-import { useState } from "react";
+import './BarBot.css';
+import axios from 'axios';
+import { useState } from 'react';
 
 function BarBot() {
-  const [answer, setAnswer] = useState("");
-  const [userInput, setUserInput] = useState(""); // Para controlar a entrada do usuário
+  const [answer, setAnswer] = useState('');
+  const [userInput, setUserInput] = useState(''); // Para controlar a entrada do usuário
 
   // Definindo as keywords
   const keywords = [
-    'whisky', 'whiskey', 'uísque', 'vodka', 'gin', 'cachaça', 
-    'rum', 'tequila', 'cerveja', 'vinho', 'champagne', 'licor', 
-    'martini', 'brandy', 'cognac', 'absinto', 'sake', 
-    'aguardente', 'conhaque', 'mojito', 'margarita', 'caipirinha', 
-    'sangria', 'piña colada', 'soco', 'zarco', 'moonshine', 
-    'amaretto', 'schnapps'
+    'whisky',
+    'whiskey',
+    'uísque',
+    'vodka',
+    'gin',
+    'cachaça',
+    'rum',
+    'tequila',
+    'cerveja',
+    'vinho',
+    'champagne',
+    'licor',
+    'martini',
+    'brandy',
+    'cognac',
+    'absinto',
+    'sake',
+    'aguardente',
+    'conhaque',
+    'mojito',
+    'margarita',
+    'caipirinha',
+    'sangria',
+    'piña colada',
+    'soco',
+    'zarco',
+    'moonshine',
+    'amaretto',
+    'schnapps',
   ];
 
   const client = axios.create({
@@ -30,26 +53,32 @@ function BarBot() {
 
       // Verifica se a mensagem contém alguma keyword
       if (!keywords.some((keyword) => messageText.includes(keyword))) {
-        const botMessage = 'Eu sou o seu BarBot, pergunte-me como fazer um drink com o que você possui na sua casa.';
+        const botMessage =
+          'Eu sou o seu BarBot, pergunte-me como fazer um drink com o que você possui na sua casa.';
         setAnswer(botMessage);
-        setUserInput(""); // Limpa a entrada do usuário
+        setUserInput(''); // Limpa a entrada do usuário
         return; // Retorna sem fazer a chamada à API
       }
 
       const params = {
-        model: "gpt-3.5-turbo-instruct", // Altere o modelo conforme necessário
+        model: 'gpt-3.5-turbo-instruct', // Altere o modelo conforme necessário
         prompt: `Me de sugestões de 3 drinks eu consigo fazer com os ingredientes: ${messageText}. Explique como preparar os drinks.`,
         max_tokens: 500,
         temperature: 0,
       };
 
       client
-        .post("https://api.openai.com/v1/completions", params)
+        .post('https://api.openai.com/v1/completions', params)
         .then((result) => {
           setAnswer(result.data.choices[0].text.trim());
-          setUserInput(""); // Limpa a entrada do usuário após enviar
+          setUserInput(''); // Limpa a entrada do usuário após enviar
         })
-        .catch((err) => console.error('Error Response:', err.response ? err.response.data : err.message));
+        .catch((err) =>
+          console.error(
+            'Error Response:',
+            err.response ? err.response.data : err.message,
+          ),
+        );
     }
   };
 
@@ -61,15 +90,18 @@ function BarBot() {
         placeholder="Eu sou o seu BarBot, pergunte-me como fazer um drink com o que você possui na sua casa."
         value={answer}
         readOnly
-      ></textarea>
-      <textarea
-        className="text-box"
-        id="text-box"
-        placeholder="Quais Bebidas você possui em casa?"
-        value={userInput}
-        onChange={(e) => setUserInput(e.target.value)} // Atualiza o estado da entrada do usuário
-        onKeyDown={(e) => handleSubmit(e)}
-      ></textarea>
+      />
+      <div className="textarea-container">
+        <textarea
+          className="text-box"
+          id="text-box"
+          placeholder="Quais Bebidas você possui em casa?"
+          value={userInput}
+          onChange={(e) => setUserInput(e.target.value)} // Atualiza o estado da entrada do usuário
+          onKeyDown={(e) => handleSubmit(e)}
+        />
+        <button className="send-button">↑</button>
+      </div>
     </div>
   );
 }

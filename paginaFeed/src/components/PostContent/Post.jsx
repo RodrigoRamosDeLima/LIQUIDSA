@@ -20,20 +20,24 @@ function Post({ post }) {
   return (
     <div className="post">
       <h2>{post.user}</h2>
-      <img src={post.imageUrl} alt="Drink" />
-      <h3>{post.title}</h3>
+      <img src={`/posts/${post.id}.jpg`} alt="Drink" />
+      <h4>{post.title}</h4>
       <p>{post.description}</p>
-      <h4>Ingredientes:</h4>
+      <h6>Ingredientes:</h6>
       <ul>
         {post.ingredients.map((ingredient, index) => (
           <li key={index}>{ingredient}</li>
         ))}
+        <p>{post.recipe}</p>
       </ul>
       <button className="edit-button">Editar</button>
-      
+
       {/* Botão de like */}
       <div className="like-section">
-        <button className={`like-button ${liked ? 'liked' : ''}`} onClick={handleLike}>
+        <button
+          className={`like-button ${liked ? 'liked' : ''}`}
+          onClick={handleLike}
+        >
           {liked ? '❤️' : '🤍'} Curtir
         </button>
         <span>{likes} curtidas</span>
