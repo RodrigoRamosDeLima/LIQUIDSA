@@ -29,16 +29,21 @@ Acompanhe o número de seguidores e quem você segue.
 Inteligência Artificial integrada:
 Usando a API do ChatGPT, o BarBot ajuda a transformar os ingredientes que você tem em casa em drinks incríveis.
 Receitas detalhadas e histórias dos coquetéis sugeridos.
+
 Funcionalidades futuras planejadas:
 Sugestões personalizadas com base no perfil do usuário (ex.: preferências por drinks doces ou cítricos).
+
 Tecnologias Utilizadas
 Frontend
 React: Para construir uma interface de usuário interativa, responsiva e moderna.
+
 Backend
 Spring Boot e Java: Gerenciamento de APIs REST para autenticação, CRUD de postagens e integração com o banco de dados.
 Node.js: Para a integração com a API do ChatGPT (BarBot).
+
 Banco de Dados
 PostgreSQL: Gerenciamento robusto e confiável de dados relacionais.
+
 Como Executar o Projeto
 Pré-requisitos
 Certifique-se de ter as seguintes ferramentas instaladas no seu ambiente:
@@ -46,42 +51,41 @@ Certifique-se de ter as seguintes ferramentas instaladas no seu ambiente:
 Node.js e npm (ou yarn) para o frontend.
 Java 17+ e Maven para o backend.
 PostgreSQL para o banco de dados.
+
 Passos para Execução
 Clone o Repositório:
-bash
-Copiar código
 git clone https://github.com/seuusuario/liquid.git
 cd liquid
+
 Configuração do Backend:
 Configure o arquivo application.properties com as credenciais do seu banco de dados PostgreSQL.
+
 Inicie o servidor Spring Boot:
-bash
-Copiar código
 cd backend
 mvn spring-boot:run
+
 Configuração do Frontend:
 Instale as dependências do React:
-bash
-Copiar código
 cd frontend
 npm install
+
 Inicie o servidor de desenvolvimento:
-bash
-Copiar código
 npm start
+
 Configuração da Integração do BarBot:
 Configure as chaves de API para o ChatGPT em um arquivo .env no backend.
 Acesse a aplicação em http://localhost:3000.
-Estrutura do Projeto
-Frontend:
 
+Estrutura do Projeto
+
+Frontend:
 Estrutura modular com componentes React reutilizáveis.
 Integração de Axios para consumo de APIs.
 Roteamento com React Router.
-Backend:
 
+Backend:
 Arquitetura RESTful.
 Configuração de segurança para autenticação de usuários.
-Banco de Dados:
 
+Banco de Dados:
 Modelagem de tabelas para usuários, postagens, comentários e interações.
