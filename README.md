@@ -13,7 +13,7 @@ Sistema seguro de autenticação para garantir privacidade e segurança.
 2. Feed de Posts
 Exploração de Conteúdo:
 Veja e interaja com os posts de outros usuários no feed.
-Curta, comente e compartilhe criações inspiradoras.
+Curta e compartilhe criações inspiradoras.
 Gerenciamento de Postagens:
 Poste fotos de seus drinks, com descrição e ingredientes utilizados.
 Edite ou exclua postagens de sua autoria.
