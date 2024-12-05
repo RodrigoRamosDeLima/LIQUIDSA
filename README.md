@@ -24,7 +24,6 @@ Personalize seu perfil com:
 Foto de exibição.
 Biografia curta para apresentar sua paixão por drinks.
 Informações básicas como nome de usuário.
-Acompanhe o número de seguidores e quem você segue.
 4. BarBot - Assistente de Coquetéis
 Inteligência Artificial integrada:
 Usando a API do ChatGPT, o BarBot ajuda a transformar os ingredientes que você tem em casa em drinks incríveis.
