@@ -21,16 +21,12 @@ Comentários e Engajamento:
 Responda a comentários de forma interativa e envolvente.
 3. Perfil de Usuário
 Personalize seu perfil com:
-Foto de exibição.
 Biografia curta para apresentar sua paixão por drinks.
 Informações básicas como nome de usuário.
 4. BarBot - Assistente de Coquetéis
 Inteligência Artificial integrada:
 Usando a API do ChatGPT, o BarBot ajuda a transformar os ingredientes que você tem em casa em drinks incríveis.
 Receitas detalhadas e histórias dos coquetéis sugeridos.
-
-Funcionalidades futuras planejadas:
-Sugestões personalizadas com base no perfil do usuário (ex.: preferências por drinks doces ou cítricos).
 
 Tecnologias Utilizadas
 Frontend
